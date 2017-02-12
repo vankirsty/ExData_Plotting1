@@ -21,6 +21,9 @@ edc$Global_intensity<-as.numeric(edc$Global_intensity)
 edc$Global_active_power<-as.numeric(edc$Global_active_power)
 edc$Sub_metering_1
 
+#Set plot layout
+par(mfrow=c(1,1))
+
 #Plot 3
 
 with(edc,plot(Time,Sub_metering_1, type='n',ylab='Energy sub metering', xlab=''))

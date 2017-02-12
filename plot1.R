@@ -6,7 +6,6 @@ tempdat<-tempfile()
 download.file("https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip",tempdat)
 edcdat<-read.table(unz(tempdat,"household_power_consumption.txt"),sep=";",header=TRUE,na.strings="?")
 
-
 #Subset Data and Transform
 edcdat$Time<-strptime(paste(edcdat$Date,edcdat$Time),"%d/%m/%Y %H:%M:%S")
 edcdat$Date<-as.Date(edcdat$Date,format = "%d/%m/%Y")
@@ -20,6 +19,8 @@ edc$Voltage<-as.numeric(edc$Voltage)
 edc$Global_intensity<-as.numeric(edc$Global_intensity)
 edc$Global_active_power<-as.numeric(edc$Global_active_power)
 
+#Set plot layout
+par(mfrow=c(1,1))
 #Plot 1
 hist(edc$Global_active_power,main='Global Active Power',col='red',xlab='Global Active Power (kilowatts)')
 

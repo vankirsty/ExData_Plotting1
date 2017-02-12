@@ -20,6 +20,8 @@ edc$Voltage<-as.numeric(edc$Voltage)
 edc$Global_intensity<-as.numeric(edc$Global_intensity)
 edc$Global_active_power<-as.numeric(edc$Global_active_power)
 
+#Set plot layout
+par(mfrow=c(1,1))
 
 #Plot 2
 with(edc,plot(Time,Global_active_power, type='l',ylab='Global Active Power (kilowatts)'))
